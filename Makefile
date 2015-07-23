@@ -37,9 +37,8 @@ report :
 	xsltproc -novalid cunit-to-junit.xsl CUnitAutomated-Results.xml > TestResults.xml
 
 .PHONY : runtests
-runtests : export LD_LIBRARY_PATH=/lib:D_LIBRARY_PATH
 runtests : tests
-	./$<
+	LD_PRELOAD=/lib/libcunit.so.1 ./$<
 
 .PHONY : all
 all : fibonacci tests

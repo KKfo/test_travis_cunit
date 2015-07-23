@@ -23,7 +23,10 @@
  * any problems arise.
  */
 int main()
-{ 
+{
+  int	r;
+
+  r = 0;
     if (CUE_SUCCESS != CU_initialize_registry())
     {
         return CU_get_error();
@@ -50,7 +53,7 @@ int main()
     // results to command-line.
     CU_basic_set_mode(CU_BRM_VERBOSE);
     CU_basic_run_tests();
-
+    r = CU_get_number_of_tests_failed();
     // Run all tests using CUnit Automated interface which outputs
     // results to a file, default name CUnitAutomated-Results.xml.
     // DTD CUnit-Run.dtd and and XSL stylesheet CUnit-Run.xsl in Share/
@@ -64,5 +67,5 @@ int main()
     //CU_automated_run_tests();
 
     CU_cleanup_registry();
-    return CU_get_number_of_tests_failed();
+    return r;
 }

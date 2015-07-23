@@ -13,7 +13,7 @@
 # permissions and limitations under the License.
 
 CC=gcc -O3
-LDFLAGS=-L./lib -lcunit
+LDFLAGS= -Llib -lcunit
 
 SRCDIR= src
 TESTDIR= test

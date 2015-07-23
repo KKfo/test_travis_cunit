@@ -23,9 +23,7 @@
  * any problems arise.
  */
 int main()
-{
-  int r;
-  
+{ 
     if (CUE_SUCCESS != CU_initialize_registry())
     {
         return CU_get_error();
@@ -66,5 +64,5 @@ int main()
     CU_automated_run_tests();
 
     CU_cleanup_registry();
-    return r;
+    return CU_get_number_of_tests_failed();
 }

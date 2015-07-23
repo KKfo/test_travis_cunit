@@ -8,6 +8,6 @@ addons:
   apt:
       packages:
         - libcunit1
-	- libcunit1-dev
+        - libcunit1-dev
 
 script: make && make runtests

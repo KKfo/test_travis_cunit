@@ -26,7 +26,7 @@ int cleanup_suite(void)
 
 void test_fibonacci_1(void)
 {
-    CU_ASSERT_EQUAL(fibonacci(1), 1);
+    CU_ASSERT_EQUAL(fibonacci(1), 0);
 }
 
 void test_fibonacci_2(void)

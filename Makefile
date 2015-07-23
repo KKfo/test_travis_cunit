@@ -28,6 +28,7 @@ TESTS=fibonacci_cunit_test.o
 	$(CC) -c $< -o $@ $(INC)
 
 fibonacci: $(OBJS) fibonacci_program.o
+	bash -c "export export LD_LIBRARY_PATH=$(pwd):$LD_LIBRARY_PATH"
 	$(CC) -o $@ $^ $(INC)
 
 tests: $(TESTS) $(OBJS) cunit_test_driver.o

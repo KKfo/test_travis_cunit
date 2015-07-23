@@ -13,11 +13,11 @@
 # permissions and limitations under the License.
 
 CC=gcc -O3
-LDFLAGS= -Llib -lcunit
+LDFLAGS= -lcunit
 
 SRCDIR= src
 TESTDIR= test
-INC=-I$(SRCDIR) -I./include -I$(TESTDIR) -I$(HOME)/include
+INC=-I$(SRCDIR) -I$(TESTDIR) -I$(HOME)/include
 
 OBJS=fibonacci.o
 TESTS=fibonacci_cunit_test.o
@@ -38,7 +38,7 @@ report :
 
 .PHONY : runtests
 runtests : tests
-	LD_PRELOAD=/lib/libcunit.so.1 ./$<
+		./$<
 
 .PHONY : all
 all : fibonacci tests

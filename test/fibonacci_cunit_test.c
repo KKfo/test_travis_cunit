@@ -21,7 +21,7 @@ int initialise_suite(void)
 
 int cleanup_suite(void)
 {
-    return 1;
+    return 0;
 }
 
 void test_fibonacci_1(void)

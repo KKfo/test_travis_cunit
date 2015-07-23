@@ -24,6 +24,8 @@
  */
 int main()
 {
+  int r;
+  
     if (CUE_SUCCESS != CU_initialize_registry())
     {
         return CU_get_error();
@@ -49,7 +51,7 @@ int main()
     // Run all tests using CUnit Basic interface which outputs
     // results to command-line.
     CU_basic_set_mode(CU_BRM_VERBOSE);
-    CU_basic_run_tests();
+    r = CU_basic_run_tests();
 
     // Run all tests using CUnit Automated interface which outputs
     // results to a file, default name CUnitAutomated-Results.xml.
@@ -64,5 +66,5 @@ int main()
     CU_automated_run_tests();
 
     CU_cleanup_registry();
-    return CU_get_error();
+    return r;
 }
